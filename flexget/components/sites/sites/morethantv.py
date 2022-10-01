@@ -22,75 +22,16 @@ Base = db_schema.versioned_base('morethantv', 0)
 
 requests = RequestSession()
 requests.add_domain_limiter(
-    TimedLimiter('morethan.tv', '5 seconds')
+    TimedLimiter('morethantv.me', '5 seconds')
 )  # TODO find out if they want a delay
 
-CATEGORIES = {'Movies': 'filter_cat[1]', 'TV': 'filter_cat[2]', 'Other': 'filter_cat[3]'}
+CATEGORIES = {'HD Movies': 'filter_cat[1]', 'SD Movies': 'filter_cat[2]', 'HD Episode': 'filter_cat[3]', 'SD Episode': 'filter_cat[4]','HD Season': 'filter_cat[5]', 'SD Season': 'filter_cat[6]',}
 
 TAGS = [
-    'action',
-    'adventure',
-    'animation',
-    'anime',
-    'art',
-    'asian',
-    'biography',
-    'celebrities',
-    'comedy',
-    'cooking',
-    'crime',
-    'cult',
-    'documentary',
-    'drama',
-    'educational',
-    'elclasico',
-    'family',
-    'fantasy',
-    'film.noir',
-    'filmromanesc',
-    'food',
-    'football',
-    'formula.e',
-    'formula1',
-    'gameshow',
-    'highlights',
-    'history',
-    'horror',
-    'investigation',
-    'lifestyle',
-    'liga1',
-    'ligabbva',
-    'ligue1',
-    'martial.arts',
-    'morethan.tv',
-    'motogp',
-    'musical',
-    'mystery',
-    'nba',
-    'news',
-    'other',
-    'performance',
-    'philosophy',
-    'politics',
-    'reality',
-    'romance',
-    'romanian.content',
-    'science',
-    'scifi',
-    'short',
-    'silent',
-    'sitcom',
-    'sketch',
-    'sports',
-    'talent',
-    'tennis',
-    'thriller',
-    'uefachampionsleague',
-    'uefaeuropaleague',
-    'ufc',
-    'war',
-    'western',
-    'wta',
+    '1080p',
+    'dvd.rip',
+    'web.dl',
+    'webrip',
 ]
 
 
@@ -129,7 +70,7 @@ class SearchMoreThanTV:
         'additionalProperties': False,
     }
 
-    base_url = 'https://www.morethan.tv/'
+    base_url = 'https://www.morethantv.me/'
     errors = False
 
     def get(self, url, params, username, password, force=False):
